@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
@@ -68,3 +68,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Create a self hosted Runnen on Github actions
+###  Create a folder
+### select an Operating system
+    mkdir actions-runner && cd actions-runner
+
+### Download the latest runner package
+    curl -o actions-runner-linux-x64-2.314.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.314.1/actions-runner-linux-x64-2.314.1.tar.gz 
+
+### Extract the installer
+    tar xzf ./actions-runner-linux-x64-2.314.1.tar.gz
+
+### Create the runner and start the configuration experience
+    ./config.sh --url https://github.com/abcdefgh--token cccccccccccxxxxxxxxxxxxxxxxxxxxx
+### Last step, run it!
+    ./run.sh
+### Using your self-hosted runner
+### Use this YAML in your workflow file for each job
+    runs-on: self-hosted
