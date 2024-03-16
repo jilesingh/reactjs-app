@@ -26,7 +26,7 @@ jobs:
 
   deploy: 
     needs: build
-    runs-on: aws-ec2    
+    runs-on: self-hosted
     steps:
       - name: Pull image from docker hub
         run: docker pull jile/reactjs-app:latest 
@@ -35,3 +35,5 @@ jobs:
       - name: Run docker container
         run: docker run -d -p 3000:80 --name reactContainer jile/reactjs-app
 
+    env:
+      RUNNEN_LABELS: aws-ec2
